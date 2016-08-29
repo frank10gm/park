@@ -1,0 +1,15 @@
+<!--<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Park</ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Park" tabIcon="car"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Favourites" tabIcon="star"></ion-tab>
+  <ion-tab tabTitle="Add" tabIcon="add" (ionSelect)="presentModalAddCar()"></ion-tab>
+</ion-tabs>

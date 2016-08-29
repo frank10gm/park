@@ -1,0 +1,14 @@
+d <ion-header>
+  <ion-navbar>
+    <ion-title>{{selectedMarca.marca}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cars">
+  <ion-searchbar (ionInput)="searchCars($event)"></ion-searchbar>
+  <ion-list>
+    <button ion-item *ngFor="let car of s_cars" (click)="openCar($event, car)">
+      {{ car.modello }}
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{selectedCar.modello}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ <div *ngIf="selectedCar" class="selection">
+    <b>{{selectedCar.modello}}</b>
+    <ion-icon name="car"></ion-icon>
+    <div>
+      You navigated here from <b>{{selectedCar.modello}}</b>
+    </div>
+  </div>
+</ion-content>
