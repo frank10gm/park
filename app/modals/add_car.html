@@ -11,7 +11,7 @@
     </ion-buttons>
 
     <ion-buttons end>
-    <button (click)="save()">
+    <button (click)="save(car)">
         Save
       </button>
     </ion-buttons>
@@ -21,36 +21,64 @@
 <ion-content padding class="addcar">
   <ion-list>
 
+
   <ion-item>
     <ion-label floating>Brand</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input [(ngModel)]="car.brand" type="text"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Model name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input [(ngModel)]="car.model" type="text"></ion-input>
+  </ion-item>
+
+<!--
+  <ion-item>
+    <ion-label stacked>Status</ion-label>
+    <ion-input [(ngModel)]="car.status" type="number" placeholder="0 = for sale; 1 = heritage; 2 = prototype."></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>State</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-label stacked>Year</ion-label>
+    <ion-input [(ngModel)]="car.year" type="number"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Year</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label floating>Mark</ion-label>
+    <ion-input [(ngModel)]="car.mark" type="text"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Engine</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label stacked>Image</ion-label>
+    <ion-input [(ngModel)]="car.image" type="text" placeholder="link of the image (ex. http://www.website.com/image.jpg)"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Year</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label floating>Dimensions</ion-label>
+    <ion-input [(ngModel)]="car.dimensions" type="text"></ion-input>
   </ion-item>
 
+  <ion-item>
+    <ion-label floating>Engines</ion-label>
+    <ion-input [(ngModel)]="car.engines" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Types</ion-label>
+    <ion-input [(ngModel)]="car.types" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Price</ion-label>
+    <ion-input [(ngModel)]="car.price" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-input [(ngModel)]="car.description" type="text"></ion-input>
+  </ion-item>
+
+-->
 
 </ion-list>
 </ion-content>

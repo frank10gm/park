@@ -3,6 +3,7 @@ import { MarchePage } from '../marche/marche';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { ModalController, ViewController, NavParams } from 'ionic-angular';
+import { CarModel} from '../../classes/CarModel.ts';
 
 @Component({
     templateUrl: 'build/pages/tabs/tabs.html'
@@ -30,19 +31,22 @@ export class TabsPage {
     }
 }
 
+
 @Component({
     templateUrl: 'build/modals/add_car.html'
 })
 class AddCar {
+    car = new CarModel();
+
     constructor(params: NavParams, public viewCtrl: ViewController) {
 
     }
 
-    dismiss(data){
-        this.viewCtrl.dismiss(data);
+    dismiss(){
+        this.viewCtrl.dismiss();
      }
 
-     save(){
-
+     save(car){
+         this.viewCtrl.dismiss(car);
      }
 }
