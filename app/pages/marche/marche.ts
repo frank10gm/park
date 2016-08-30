@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { CarsPage } from '../cars/cars';
+import myGlobals = require('../../res/globals');
 
 @Component({
     templateUrl: 'build/pages/marche/marche.html'
@@ -42,6 +43,7 @@ export class MarchePage {
 
     //openMarche
     openMarca(event, marca) {
+        myGlobals.selectedBrand = marca;
         this.navCtrl.push(CarsPage, {
             marca: marca
         });

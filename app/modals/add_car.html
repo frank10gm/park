@@ -11,7 +11,7 @@
     </ion-buttons>
 
     <ion-buttons end>
-    <button (click)="save(car)">
+    <button (click)="save()">
         Save
       </button>
     </ion-buttons>
@@ -32,7 +32,6 @@
     <ion-input [(ngModel)]="car.model" type="text"></ion-input>
   </ion-item>
 
-<!--
   <ion-item>
     <ion-label stacked>Status</ion-label>
     <ion-input [(ngModel)]="car.status" type="number" placeholder="0 = for sale; 1 = heritage; 2 = prototype."></ion-input>
@@ -78,7 +77,6 @@
     <ion-input [(ngModel)]="car.description" type="text"></ion-input>
   </ion-item>
 
--->
 
 </ion-list>
 </ion-content>
