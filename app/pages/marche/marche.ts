@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -15,8 +15,17 @@ export class MarchePage {
     private marche: any;
     private s_marche: any;
 
-    constructor(private navCtrl: NavController, navParams: NavParams, private http: Http) {
+    constructor(private navCtrl: NavController, navParams: NavParams, private http: Http, public viewCtrl: ViewController) {
         this.initializeMarche();
+    }
+
+    ionViewDidEnter(){
+        myGlobals.selectedBrand = {marca: ''};
+    }
+
+    doRefresh(refresher) {
+        this.initializeMarche();
+        refresher.complete();
     }
 
     initializeMarche() {

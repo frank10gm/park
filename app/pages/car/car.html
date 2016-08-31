@@ -1,15 +1,56 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{selectedCar.modello}}</ion-title>
+    <ion-title>{{brand}} {{car.modello}}</ion-title>
+    <ion-buttons start>
+    <button (click)="showDelete()" danger>
+        Delete
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+    <button (click)="edit()">
+        Edit
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
- <div *ngIf="selectedCar" class="selection">
-    <b>{{selectedCar.modello}}</b>
-    <ion-icon name="car"></ion-icon>
-    <div>
-      You navigated here from <b>{{selectedCar.modello}}</b>
-    </div>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      {{brand}} {{car.modello}}
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="cart" item-left></ion-icon>
+        Shopping
+      </button>
+
+      <button ion-item>
+        <ion-icon name="medical" item-left></ion-icon>
+        Hospital
+      </button>
+
+      <button ion-item>
+        <ion-icon name="cafe" item-left></ion-icon>
+        Cafe
+      </button>
+
+      <button ion-item>
+        <ion-icon name="paw" item-left></ion-icon>
+        Dog Park
+      </button>
+
+      <button ion-item>
+        <ion-icon name="beer" item-left></ion-icon>
+        Pub
+      </button>
+
+      <button ion-item>
+        <ion-icon name="planet" item-left></ion-icon>
+        Space
+      </button>
+
+    </ion-list>
+  </ion-card>
 </ion-content>

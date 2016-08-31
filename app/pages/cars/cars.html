@@ -1,14 +1,26 @@
 d <ion-header>
   <ion-navbar>
     <ion-title>{{selectedMarca.marca}}</ion-title>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content class="cars">
-  <ion-searchbar (ionInput)="searchCars($event)"></ion-searchbar>
-  <ion-list>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-searchbar [(ngModel)]="searchBar" (ionInput)="searchCars($event)"></ion-searchbar>
+  <!--<ion-list>
     <button ion-item *ngFor="let car of s_cars" (click)="openCar($event, car)">
       {{ car.modello }}
     </button>
-  </ion-list>
+  </ion-list>-->
+  <ion-item-group *ngFor="let group of groupedCars">
+
+      <ion-item-divider light>{{group.status}}</ion-item-divider>
+      <button ion-item *ngFor="let car of group.cars" (click)="openCar($event, car)">{{car.modello}}</button>
+
+    </ion-item-group>
 </ion-content>
