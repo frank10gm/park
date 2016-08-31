@@ -38,9 +38,13 @@ export class TabsPage {
 })
 class AddCar {
     car: CarModel;
+    abilita_marca: any;
 
     constructor(params: NavParams, public viewCtrl: ViewController) {
         this.car = new CarModel(params.data.brand);
+        if (params.data.brand != '') {
+            this.abilita_marca = true;
+        }
     }
 
     dismiss() {
