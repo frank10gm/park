@@ -14,7 +14,6 @@ export class CarPage {
     constructor(public navCtrl: NavController, navParams: NavParams, private http: Http, public events: Events, public alertCtrl: AlertController) {
         this.car = navParams.get('car');
         this.brand = navParams.get('marca');
-        console.log(JSON.stringify(this.car));
     }
 
     showDelete() {

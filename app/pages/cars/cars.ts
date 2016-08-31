@@ -47,7 +47,6 @@ export class CarsPage {
             .subscribe(data => {
                 this.cars = data;
                 this.initializeSearch();
-                console.log(JSON.stringify(data));
             }, error => {
                 console.log('error: ' + error._body);
             });

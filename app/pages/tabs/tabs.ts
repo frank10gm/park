@@ -30,6 +30,10 @@ export class TabsPage {
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new RequestOptions({ headers: headers });
 
+        if(data.status == null){
+            data.status = '0';
+        }
+
         let link = 'http://www.stritwalk.com/Park/api/';
         var body = 'action=uploadCar&marca=';
         body += data.brand;
