@@ -1,6 +1,7 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Park</ion-title>
+    <ion-title></ion-title>
+  <img style="height: 50px;" src="../img/logo_alto3.png" />
   </ion-navbar>
 </ion-header>
 
@@ -9,7 +10,7 @@
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  
+
   <ion-searchbar (ionInput)="searchMarche($event)"></ion-searchbar>
   <ion-list>
     <button ion-item *ngFor="let marca of s_marche" (click)="openMarca($event, marca)">

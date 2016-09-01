@@ -20,7 +20,10 @@ d <ion-header>
   <ion-item-group *ngFor="let group of groupedCars">
 
       <ion-item-divider light>{{group.status}}</ion-item-divider>
-      <button ion-item *ngFor="let car of group.cars" (click)="openCar($event, car)">{{car.modello}}</button>
+      <button ion-item *ngFor="let car of group.cars" (click)="openCar($event, car)">
+        <div [innerHTML]="car.modello"></div>
+        <div [innerHTML]="car.serieNuova" item-right></div>
+      </button>
 
     </ion-item-group>
 </ion-content>

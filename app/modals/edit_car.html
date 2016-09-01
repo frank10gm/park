@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Add a model
+      Edit
     </ion-title>
 
     <ion-buttons start>
@@ -24,17 +24,17 @@
 
   <ion-item>
     <ion-label floating>Brand</ion-label>
-    <ion-input [disabled]="abilita_marca" [(ngModel)]="car.brand" type="text" required></ion-input>
+    <ion-input [(ngModel)]="car.brand" type="text" disabled></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Model name</ion-label>
-    <ion-input [(ngModel)]="car.model" type="text" required></ion-input>
+    <ion-input [(ngModel)]="car.model" type="text" disabled></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label stacked>Status</ion-label>
-    <ion-input [(ngModel)]="car.status" min="0" max="2" type="number" placeholder="0 = for sale; 1 = heritage; 2 = prototype."></ion-input>
+    <ion-input [(ngModel)]="car.status" type="number" min="0" max="2" placeholder="0 = for sale; 1 = heritage; 2 = prototype."></ion-input>
   </ion-item>
 
   <ion-item>
@@ -42,6 +42,10 @@
     <ion-input [(ngModel)]="car.year" type="number"></ion-input>
   </ion-item>
 
+  <!--<ion-item>
+    <ion-label floating>Mark</ion-label>
+    <ion-input [(ngModel)]="car.mark" type="text"></ion-input>
+  </ion-item>-->
 
   <ion-item>
     <ion-label stacked>Image</ion-label>

@@ -30,7 +30,7 @@ export class TabsPage {
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new RequestOptions({ headers: headers });
 
-        if(data.status == null){
+        if(data.status == null || data.status == ''){
             data.status = '0';
         }
 
@@ -40,11 +40,10 @@ export class TabsPage {
         body += '&modello=' + data.model;
         body += '&vecchio=' + data.status;
         body += '&motori=' + data.engines;
-        body += '&serieVecchia=' + data.year;
-        body += '&serieNuova=' + data.mark;
+        body += '&serieNuova=' + data.year;
         body += '&immagine=' + data.image
         body += '&dimensioni=' + data.dimensions;
-        body += '&breveDesc=' + data.types;
+        body += '&modelli=' + data.types;
         body += '&prezzo=' + data.price;
         body += '&descrizione=' + data.description;
 
@@ -60,9 +59,10 @@ export class TabsPage {
     presentModalAddCar() {
         let add_car_modal = this.modalCtrl.create(AddCar, { brand: myGlobals.selectedBrand.marca });
         add_car_modal.onDidDismiss(data => {
-            console.log(JSON.stringify(data));
-            this.saveCarDb(data);
-            this.events.publish('reloadCars');
+            if(data){
+                this.saveCarDb(data);
+                this.events.publish('reloadCars');
+            }
         });
         add_car_modal.present();
     }

@@ -15,42 +15,69 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      {{brand}} {{car.modello}}
-    </ion-card-header>
 
-    <ion-list>
-      <button ion-item>
-        <ion-icon name="cart" item-left></ion-icon>
-        Shopping
-      </button>
+  <ion-card *ngIf="car_content.description">
+  <ion-card-header>
+    Description
+  </ion-card-header>
+  <ion-card-content>
+    <div [innerHTML]="car_content.description">
+    </div>
+  </ion-card-content>
+</ion-card>
 
-      <button ion-item>
-        <ion-icon name="medical" item-left></ion-icon>
-        Hospital
-      </button>
+<ion-card *ngIf="car_content.year">
+<ion-card-header>
+  Year
+</ion-card-header>
+<ion-card-content>
+  <div [innerHTML]="car_content.year">
+  </div>
+</ion-card-content>
+</ion-card>
 
-      <button ion-item>
-        <ion-icon name="cafe" item-left></ion-icon>
-        Cafe
-      </button>
+<ion-card *ngIf="car_content.engines">
+<ion-card-header>
+  Engines
+</ion-card-header>
+<ion-card-content>
+  <div [innerHTML]="car_content.engines">
+  </div>
+</ion-card-content>
+</ion-card>
 
-      <button ion-item>
-        <ion-icon name="paw" item-left></ion-icon>
-        Dog Park
-      </button>
+<ion-card *ngIf="car_content.types">
+<ion-card-header>
+  Types
+</ion-card-header>
+<ion-card-content>
+  <div [innerHTML]="car_content.types">
+  </div>
+</ion-card-content>
+</ion-card>
 
-      <button ion-item>
-        <ion-icon name="beer" item-left></ion-icon>
-        Pub
-      </button>
+<ion-card *ngIf="car_content.dimensions">
+<ion-card-header>
+  Dimensions
+</ion-card-header>
+<ion-card-content>
+  <div [innerHTML]="car_content.dimensions">
+  </div>
+</ion-card-content>
+</ion-card>
 
-      <button ion-item>
-        <ion-icon name="planet" item-left></ion-icon>
-        Space
-      </button>
+<ion-card *ngIf="car_content.price">
+<ion-card-header>
+  Price
+</ion-card-header>
+<ion-card-content>
+  <div [innerHTML]="car_content.price">
+  </div>
+</ion-card-content>
+</ion-card>
 
-    </ion-list>
+<ion-card *ngIf="car_content.image">
+    <img style="" [src]="car_content.image"/>
   </ion-card>
+
 </ion-content>
