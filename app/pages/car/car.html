@@ -16,12 +16,12 @@
 
 <ion-content>
 
-  <ion-card *ngIf="car_content.description">
+  <ion-card>
   <ion-card-header>
     {{brand}} {{car.modello}}
   </ion-card-header>
   <ion-card-content>
-    <div [innerHTML]="car_content.description">
+    <div [innerHTML]="car_content.description" *ngIf="car_content.description">
     </div>
   </ion-card-content>
 </ion-card>
