@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{brand}} {{car.modello}}</ion-title>
-    <ion-buttons start>
+    <ion-title></ion-title>
+    <ion-buttons end>
     <button (click)="showDelete()" danger>
         Delete
       </button>
@@ -18,7 +18,7 @@
 
   <ion-card *ngIf="car_content.description">
   <ion-card-header>
-    Description
+    {{brand}} {{car.modello}}
   </ion-card-header>
   <ion-card-content>
     <div [innerHTML]="car_content.description">
