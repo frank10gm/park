@@ -34,6 +34,28 @@ export class TabsPage {
             data.status = '0';
         }
 
+        if(data.engines == null){
+            data.engines = '';
+        }
+        if(data.year == null){
+            data.year = '';
+        }
+        if(data.image == null){
+            data.image = '';
+        }
+        if(data.dimensions == null){
+            data.dimensions = '';
+        }
+        if(data.types == null){
+            data.types = '';
+        }
+        if(data.price == null){
+            data.price = '';
+        }
+        if(data.description == null){
+            data.description = '';
+        }
+
         let link = 'http://www.stritwalk.com/Park/api/';
         var body = 'action=uploadCar&marca=';
         body += data.brand;
@@ -41,7 +63,8 @@ export class TabsPage {
         body += '&vecchio=' + data.status;
         body += '&motori=' + data.engines;
         body += '&serieNuova=' + data.year;
-        body += '&immagine=' + data.image
+        body += '&serieVecchia=' + '';
+        body += '&immagine=' + data.image;
         body += '&dimensioni=' + data.dimensions;
         body += '&modelli=' + data.types;
         body += '&prezzo=' + data.price;

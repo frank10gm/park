@@ -53,6 +53,7 @@ export class CarPage {
             data.status = '0';
         }
 
+
         let link = 'http://www.stritwalk.com/Park/api/';
         var body = 'action=editCar&marca=';
         body += data.brand;
@@ -60,7 +61,8 @@ export class CarPage {
         body += '&vecchio=' + data.status;
         body += '&motori=' + data.engines;
         body += '&serieNuova=' + data.year;
-        body += '&immagine=' + data.image
+        body += '&immagine=' + data.image;
+        body += '&serieVecchia=' + '';
         body += '&dimensioni=' + data.dimensions;
         body += '&modelli=' + data.types;
         body += '&prezzo=' + data.price;
