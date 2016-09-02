@@ -65,6 +65,14 @@ export class CarsPage {
         return 0;
     }
 
+    compare2(a, b){
+        if (a.modello < b.modello)
+            return -1;
+        if (a.modello > b.modello)
+            return 1;
+        return 0;
+    }
+
     groupCars(cars) {
         this.groupedCars = [];
         let sortedCars = cars.sort(this.compare);
@@ -98,6 +106,9 @@ export class CarsPage {
             }
             currentCars.push(value);
         });
+        this.groupedCars[0].cars = this.groupedCars[0].cars.sort(this.compare2);
+        this.groupedCars[1].cars = this.groupedCars[0].cars.sort(this.compare2);
+        this.groupedCars[2].cars = this.groupedCars[0].cars.sort(this.compare2);
     }
 
     //openMarche
