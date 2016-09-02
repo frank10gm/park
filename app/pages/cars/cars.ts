@@ -65,7 +65,7 @@ export class CarsPage {
         return 0;
     }
 
-    compare2(a, b){
+    compare2(a, b) {
         if (a.modello < b.modello)
             return -1;
         if (a.modello > b.modello)
@@ -106,9 +106,9 @@ export class CarsPage {
             }
             currentCars.push(value);
         });
-        this.groupedCars[0].cars = this.groupedCars[0].cars.sort(this.compare2);
-        this.groupedCars[1].cars = this.groupedCars[1].cars.sort(this.compare2);
-        this.groupedCars[2].cars = this.groupedCars[2].cars.sort(this.compare2);
+        for (var i = 0; i < this.groupedCars.length; i++) {
+            this.groupedCars[i].cars = this.groupedCars[i].cars.sort(this.compare2);
+        }
     }
 
     //openMarche
